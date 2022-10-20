@@ -1,0 +1,163 @@
+[
+    {
+        "name": "GOOD_TRACK_DWARF_1_AND_2",
+        "id": 1,
+        "color": "#d22b2b",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_DWARF_1_AND_4",
+        "id": 2,
+        "color": "#389e0d",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_DWARF_1_AND_3",
+        "id": 3,
+        "color": "#ffc069",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_DWARF_2_AND_4",
+        "id": 4,
+        "color": "#ad8b00",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_PU_1_AND_2",
+        "id": 5,
+        "color": "#d22b2b",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_PU_1_AND_4",
+        "id": 6,
+        "color": "#389e0d",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_PU_1_AND_3",
+        "id": 7,
+        "color": "#ffc069",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_PU_2_AND_4",
+        "id": 8,
+        "color": "#ad8b00",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_DWARF_NONE_OF_IT",
+        "id": 9,
+        "color": "#9254de",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_PU_NONE_OF_IT",
+        "id": 10,
+        "color": "#9254de",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "GOOD_TRACK_LEFT_TO_RIGHT_ARROW",
+        "id": 11,
+        "color": "#b40094",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_DWARF_1_AND_2",
+        "id": 12,
+        "color": "#d22b2b",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_DWARF_1_AND_4",
+        "id": 13,
+        "color": "#389e0d",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_DWARF_1_AND_3",
+        "id": 14,
+        "color": "#ffc069",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_DWARF_2_AND_4",
+        "id": 15,
+        "color": "#ad8b00",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_PU_1_AND_2",
+        "id": 16,
+        "color": "#d22b2b",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_PU_1_AND_4",
+        "id": 17,
+        "color": "#389e0d",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_PU_1_AND_3",
+        "id": 18,
+        "color": "#ffc069",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_PU_2_AND_4",
+        "id": 19,
+        "color": "#ad8b00",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_DWARF_NONE_OF_IT",
+        "id": 20,
+        "color": "#9254de",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_PU_NONE_OF_IT",
+        "id": 21,
+        "color": "#9254de",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "BAD_TRACK_LEFT_TO_RIGHT_ARROW",
+        "id": 22,
+        "color": "#b40094",
+        "type": "any",
+        "attributes": []
+    },
+    {
+        "name": "OTHER",
+        "id": 23,
+        "color": "#1759ab",
+        "type": "any",
+        "attributes": []
+    }
+]
