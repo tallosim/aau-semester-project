@@ -14,6 +14,19 @@ ANNOTAION_TO_FILENAME = {
     4: 'video_4.mp4',
     5: 'video_2.mp4',
     6: 'video_1.mp4',
+    9: 'Video7_1.mp4',
+    10: 'Video7_2.mp4',
+    11: 'video_5_1.mp4',
+    12: 'Video7_3.mp4',
+    13: 'Video7_4.mp4',
+    14: 'video_5_2.mp4',
+    15: 'Video7_5.mp4',
+    16: 'Video7_6.mp4',
+    17: 'Video7_7.mp4',
+    18: 'Video7_8.mp4',
+    19: 'Video7_9.mp4',
+    23: 'video_8.MP4',
+    24: 'Video7_13.mp4',
 }
 VIDEO_FOLDER_PATH = 'videos/'
 IMAGES_FOLDER_PATH = 'images/'
@@ -21,7 +34,8 @@ MOVE_SAMPLE_RATIO = 0.2
 STOP_SAMPLE_COUNT = 5
 STOPPED_SECTIONS = {
     4: [(0, 400)],
-    6: [(0, 8000)]
+    6: [(0, 8000)],
+    23: [(0, 7640)],
 }
 YOLO_DATASET_PATH = 'yolo/'
 LABELS = ['1_AND_2', '1_AND_4', '1_AND_3', '2_AND_4', 'OTHER']
