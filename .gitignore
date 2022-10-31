@@ -67,3 +67,5 @@ target/
 **/videos/
 **/images/
 **/yolo/
+**/runs/
+**/zips/
