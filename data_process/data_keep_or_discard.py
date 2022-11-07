@@ -17,6 +17,7 @@ def show_image(image_path, label_path):
     image = cv.imread(image_path)
     print("Received image path:",image_path)
 
+
     count, x, y, w, h = open(label_path, 'r').read().splitlines()[0].split(' ')
     count, x, y, w, h = float(count), float(x), float(y), float(w), float(h)
     print("Label data:",count, x, y, w, h)
@@ -31,7 +32,6 @@ def show_image(image_path, label_path):
 
     image_with_bounding = image.copy()
 
-    for i in
     cv.rectangle(image_with_bounding, (pixel_x, pixel_y), (pixel_x+pixel_width, pixel_y+pixel_height), (255,0,0), 5)
 
     cv.imshow("Image",image_with_bounding)
