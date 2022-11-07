@@ -16,18 +16,34 @@ ANNOTAION_TO_FILENAME = {
     6: 'video_1.mp4',
     9: 'Video7_1.mp4',
     10: 'Video7_2.mp4',
-    11: 'video_5_1.mp4',
     12: 'Video7_3.mp4',
     13: 'Video7_4.mp4',
     14: 'video_5_2.mp4',
     15: 'Video7_5.mp4',
     16: 'Video7_6.mp4',
-    17: 'Video7_7.mp4',
     18: 'Video7_8.mp4',
     19: 'Video7_9.mp4',
     23: 'video_8.MP4',
     24: 'Video7_13.mp4',
 }
+OFFSETS = {
+    3: 2,
+    4: 2,
+    5: 2,
+    6: 2,
+    9: 2,
+    10: 2,
+    12: 2,
+    13: 2,
+    14: 4,
+    15: 2,
+    16: 2,
+    18: 2,
+    19: 2,
+    23: 2,
+    24: 2
+}
+DEFAULT_FPS = 30.0
 VIDEO_FOLDER_PATH = 'videos/'
 IMAGES_FOLDER_PATH = 'images/'
 MOVE_SAMPLE_RATIO = 0.2
@@ -215,7 +231,9 @@ for annotation_id, frame_list in video_frame_list.items():
     min_size_x = MIN_SIZE_X / original_width
     min_size_y = MIN_SIZE_Y / original_height
     
-    frame_id = -1
+    multiplier = DEFAULT_FPS / cap.get(cv2.CAP_PROP_FPS)
+    
+    frame_id = 0
     
     while(cap.isOpened()):
         ret, frame = cap.read()
@@ -223,8 +241,10 @@ for annotation_id, frame_list in video_frame_list.items():
         if ret == False:
             break
         
-        if frame_id in frame_list:
-            labels = frames[frame_id]
+        corrected_frame_id = int(multiplier * frame_id - OFFSETS[annotation_id] + 1)
+        
+        if corrected_frame_id in frame_list:
+            labels = frames[corrected_frame_id]
             
             yolo_labels = list()
             for i, label in enumerate(labels):
