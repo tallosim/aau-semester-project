@@ -17,26 +17,26 @@ def show_image(image_path, label_path):
     image = cv.imread(image_path)
     print("Received image path:",image_path)
 
-
-    count, x, y, w, h = open(label_path, 'r').read().splitlines()[0].split(' ')
-    count, x, y, w, h = float(count), float(x), float(y), float(w), float(h)
-    print("Label data:",count, x, y, w, h)
-
-    pixel_x = int(x * image.shape[1])
-    pixel_y = int(y * image.shape[0])
-    pixel_width = int(w * image.shape[1])
-    pixel_height = int(h * image.shape[0])
-
-    pixel_x = pixel_x - int(pixel_width / 2)
-    pixel_y = pixel_y - int(pixel_height / 2)
-
+    bounding_boxes_read = open(label_path, 'r').read().splitlines()
     image_with_bounding = image.copy()
 
-    cv.rectangle(image_with_bounding, (pixel_x, pixel_y), (pixel_x+pixel_width, pixel_y+pixel_height), (255,0,0), 5)
+    for x in range(len(bounding_boxes_read)):
+        count, x, y, w, h = bounding_boxes_read[x].split(' ')
+        count, x, y, w, h = float(count), float(x), float(y), float(w), float(h)
+        print("Label data:",count, x, y, w, h)
+
+        pixel_x = int(x * image.shape[1])
+        pixel_y = int(y * image.shape[0])
+        pixel_width = int(w * image.shape[1])
+        pixel_height = int(h * image.shape[0])
+
+        pixel_x = pixel_x - int(pixel_width / 2)
+        pixel_y = pixel_y - int(pixel_height / 2)
+
+        cv.rectangle(image_with_bounding, (pixel_x, pixel_y), (pixel_x+pixel_width, pixel_y+pixel_height), (255,0,0), 5)
 
     cv.imshow("Image",image_with_bounding)
     cv.waitKey(0)
-    pass
 
 
 if __name__ == '__main__':
