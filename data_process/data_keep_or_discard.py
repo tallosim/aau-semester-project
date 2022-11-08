@@ -23,6 +23,8 @@ def load_data(folder_path):
 
 
 def show_image(image_path, label_path, classes, colors):
+    global image_with_bounding
+
     image = cv.imread(image_path)
     print("Received image path:",image_path)
 
@@ -63,24 +65,69 @@ def show_image(image_path, label_path, classes, colors):
     final_coordinate = 0,0
 
     while True:
-        cv.namedWindow("Image")
         cv.imshow("Image", image_with_bounding)
-        # cv.setMouseCallback('input', mouse_event)
+        cv.setMouseCallback('Image', mouse_event)
 
         key_press = cv.waitKey(1)
+        if key_press != -1:
+            print("Key press:",key_press)
 
         # Based on the OpenCV grabcut example: https://github.com/opencv/opencv/blob/master/samples/python/grabcut.py
-        if key_press == 27:
+        if key_press == ord('q'):
             break
+
         elif key_press == ord('1'):
+            roi_selected = cv.selectROI('Image', image_with_bounding)
+            print("ROI Selected:",roi_selected)
             pass
+
         elif key_press == ord('2'):
             pass
 
+        elif key_press == (8 or 46):
+            print('Deleting bounding box at coordinate:',mouse_position_x,mouse_position_y)
+
+        # If key-press is backspace or delete
+        elif key_press == 27:
+            return True
+
+
+mouse_left_pressed = False
+mouse_right_pressed = False
+mouse_position_x = 0
+mouse_position_y = 0
+
 
 def mouse_event(event, x, y,_,__):
-    print("Event:", event, 'X:',x,'Y:',y)
-    pass
+    global mouse_left_pressed
+    global mouse_right_pressed
+    global mouse_position_x
+    global mouse_position_y
+
+    mouse_position_x = x
+    mouse_position_y = y
+
+    # print("Event:", event, 'X:',x,'Y:',y)
+
+    # Left-mouse down
+    if event == 1:
+        print("Mouse-left pressed",'X:',x,'Y:',y)
+        mouse_left_pressed = True
+
+    # Right-mouse down
+    if event == 2:
+        print("Right-left pressed",'X:',x,'Y:',y)
+        mouse_right_pressed = True
+
+    # Left-mouse down
+    if event == 4:
+        print("Mouse-left released",'X:',x,'Y:',y)
+        mouse_left_pressed = False
+
+    # Right-mouse down
+    if event == 5:
+        print("Right-left released",'X:',x,'Y:',y)
+        mouse_right_pressed = False
 
 
 def conver_hex_to_decimal_color(hex_color):
@@ -101,4 +148,7 @@ if __name__ == '__main__':
     colors = [conver_hex_to_decimal_color(color) for color in colors]
 
     for i in range(len(image_paths)):
-        show_image(image_paths[i], label_paths[i], classes, colors)
+        if_close = show_image(image_paths[i], label_paths[i], classes, colors)
+
+        if if_close:
+            break
