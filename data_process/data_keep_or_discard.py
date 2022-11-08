@@ -59,8 +59,28 @@ def show_image(image_path, label_path, classes, colors):
         cv.rectangle(image_with_bounding, (pixel_x, pixel_y), (pixel_x + pixel_width, pixel_y + pixel_height), color, 2)
         cv.putText(image_with_bounding, class_name, (pixel_x, pixel_y - 12), 0, 0.8, color, 2)
 
-    cv.imshow("Image",image_with_bounding)
-    return cv.waitKey(0)
+    initial_coordinate = 0,0
+    final_coordinate = 0,0
+
+    while True:
+        cv.namedWindow("Image")
+        cv.imshow("Image", image_with_bounding)
+        # cv.setMouseCallback('input', mouse_event)
+
+        key_press = cv.waitKey(1)
+
+        # Based on the OpenCV grabcut example: https://github.com/opencv/opencv/blob/master/samples/python/grabcut.py
+        if key_press == 27:
+            break
+        elif key_press == ord('1'):
+            pass
+        elif key_press == ord('2'):
+            pass
+
+
+def mouse_event(event, x, y,_,__):
+    print("Event:", event, 'X:',x,'Y:',y)
+    pass
 
 
 def conver_hex_to_decimal_color(hex_color):
@@ -79,9 +99,6 @@ if __name__ == '__main__':
     
     colors = ['#d22b2b', '#389e0d', '#ffc069', '#ad8b00', '#1759ab']
     colors = [conver_hex_to_decimal_color(color) for color in colors]
-    
-    for image_path, label_path in zip(image_paths, label_paths):
-        if show_image(image_path, label_path, classes, colors) == ord('q'):
-            break
 
-    pass
+    for i in range(len(image_paths)):
+        show_image(image_paths[i], label_paths[i], classes, colors)
