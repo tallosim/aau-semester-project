@@ -90,6 +90,7 @@ def show_image(image_path, label_path, classes, colors):
                 if (bounding_boxes[b][0] <= mouse_position_x <= bounding_boxes[b][2]) and (bounding_boxes[b][1] <= mouse_position_y <= bounding_boxes[b][3]):
                     print("Found match:",bounding_boxes[b])
                     bounding_boxes.pop(b)
+                    break
 
         # If key-press is backspace or delete
         elif key_press == 27:
