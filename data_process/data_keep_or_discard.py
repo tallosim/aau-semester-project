@@ -6,6 +6,9 @@ import os
 def load_data(folder_path):
     image_paths = glob.glob(os.path.join(folder_path, 'images', 'train', '*.jpg'))
     label_paths = glob.glob(os.path.join(folder_path, 'labels', 'train', '*.txt'))
+    
+    image_paths = list(sorted(image_paths))
+    label_paths = list(sorted(label_paths))
 
     print("Received folder path:",folder_path)
     print(len(image_paths),"Image path:",image_paths)
