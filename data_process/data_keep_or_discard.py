@@ -206,9 +206,13 @@ class ImageWindow:
 
 
 def load_data(folder_path):
-    image_paths = glob.glob(os.path.join(folder_path, 'images', 'train', '*.jpg'))
-    label_paths = glob.glob(os.path.join(folder_path, 'labels', 'train', '*.txt'))
+    image_paths = []
+    label_paths = []
     
+    for path in ['train', 'test', 'valid']:
+        image_paths += glob.glob(os.path.join(folder_path, 'images', path, '*.jpg'))
+        label_paths += glob.glob(os.path.join(folder_path, 'labels', path, '*.txt'))
+
     image_paths = list(sorted(image_paths))
     label_paths = list(sorted(label_paths))
     
