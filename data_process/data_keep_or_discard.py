@@ -235,6 +235,24 @@ if __name__ == '__main__':
         yolo_folder_path = r'C:\Users\lukad\Desktop\Computer Vision 7th semester project COM_ENG\yolo'
 
     image_paths, label_paths, classes = load_data(yolo_folder_path)
+
+    author = input('Insert author name: ["M", "L", "T"]\n')
+    
+    first = int(len(image_paths) * 1 // 3)
+    second = int(len(image_paths) * 2 // 3)
+    
+    if author == 'M':
+        image_paths = image_paths[:first]
+        label_paths = label_paths[:first]
+    elif author == 'L':
+        image_paths = image_paths[first:second]
+        label_paths = label_paths[first:second]
+    elif author == 'T':
+        image_paths = image_paths[second:]
+        label_paths = label_paths[second:]
+    else:
+        print('Invalid author name')
+        exit()
     
     colors = ['#d22b2b', '#389e0d', '#ffc069', '#ad8b00', '#1759ab']
     colors = [conver_hex_to_decimal_color(color) for color in colors]
