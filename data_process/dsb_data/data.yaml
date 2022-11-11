@@ -1,0 +1,10 @@
+names:
+- 1_AND_2
+- 1_AND_4
+- 1_AND_3
+- 2_AND_4
+- OTHER
+nc: 5
+test: yolo/images/test
+train: yolo/images/train
+val: yolo/images/valid
