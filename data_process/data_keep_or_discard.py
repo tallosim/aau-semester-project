@@ -2,7 +2,7 @@ import cv2 as cv
 import glob
 import os
 
-RADIUS = 3
+RADIUS = 8
 
 
 class ImageWindow:
