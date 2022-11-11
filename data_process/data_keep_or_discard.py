@@ -232,7 +232,7 @@ if __name__ == '__main__':
 
     # Short-cut
     if yolo_folder_path == 'L':
-        yolo_folder_path = r'C:\Users\lukad\Desktop\Computer Vision 7th semester project COM_ENG\yolo'
+        yolo_folder_path = r'C:\Users\lukad\Desktop\Computer Vision 7th semester project COM_ENG\dsb_dataset_raw\dsb_data'
 
     image_paths, label_paths, classes = load_data(yolo_folder_path)
 
@@ -254,7 +254,7 @@ if __name__ == '__main__':
         print('Invalid author name')
         exit()
     
-    colors = ['#d22b2b', '#389e0d', '#ffc069', '#ad8b00', '#1759ab']
+    colors = ['#d22b2b', '#389e0d', '#ffc069', '#ad8b00', '#1759ab', '#0cfabc']
     colors = [conver_hex_to_decimal_color(color) for color in colors]
 
     if len(image_paths) == 0 or len(label_paths) == 0 or len(image_paths) != len(label_paths):
