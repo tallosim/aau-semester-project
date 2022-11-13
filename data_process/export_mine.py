@@ -47,4 +47,4 @@ if __name__ == '__main__':
         os.makedirs(os.path.join(new_folder_path, 'labels', path), exist_ok=True)
     
     for image_path, label_path in zip(image_paths, label_paths):
-        shutil.copyfile(label_path, os.path.join(new_folder_path, 'labels', label_path.split('\\')[-2], label_path.split('\\')[-1]))
+        shutil.copyfile(label_path, os.path.join(new_folder_path, 'labels', label_path.split(os.sep)[-2], label_path.split(os.sep)[-1]))
