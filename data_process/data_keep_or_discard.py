@@ -250,6 +250,8 @@ if __name__ == '__main__':
     elif author == 'T':
         image_paths = image_paths[second:]
         label_paths = label_paths[second:]
+    elif author == 'A':
+        pass
     else:
         print('Invalid author name')
         exit()
