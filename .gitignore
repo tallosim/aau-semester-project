@@ -69,3 +69,5 @@ target/
 **/yolo/
 **/runs/
 **/zips/
+
+/dsb_data/
