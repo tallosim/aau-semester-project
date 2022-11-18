@@ -71,3 +71,5 @@ target/
 **/zips/
 
 /dsb_data/
+
+**/exp*
