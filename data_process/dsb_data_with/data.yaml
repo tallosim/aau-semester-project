@@ -6,6 +6,6 @@ names:
 - OTHER
 - BACKSIGNAL
 nc: 6
-test: yolo/images/test
-train: yolo/images/train
-val: yolo/images/valid
+test: dsb_data/dsb_data_with/images/test
+train: dsb_data/dsb_data_with/images/train
+val: dsb_data/dsb_data_with/images/valid

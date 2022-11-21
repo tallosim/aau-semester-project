@@ -5,6 +5,6 @@ names:
 - 2_AND_4
 - OTHER
 nc: 5
-test: yolo/images/test
-train: yolo/images/train
-val: yolo/images/valid
+test: dsb_data/dsb_data_without/images/test
+train: ydsb_data/dsb_data_without/images/train
+val: dsb_data/dsb_data_without/images/valid
