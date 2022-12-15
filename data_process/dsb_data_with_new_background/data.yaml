@@ -1,0 +1,11 @@
+names:
+- 1_AND_2
+- 1_AND_4
+- 1_AND_3
+- 2_AND_4
+- OTHER
+- BACKSIGNAL
+nc: 6
+test: dsb_data/dsb_data_with_new_background/images/test
+train: dsb_data/dsb_data_with_new_background/images/train
+val: dsb_data/dsb_data_with_new_background/images/valid
